@@ -1,24 +1,29 @@
-import logo from './logo.svg';
 import './App.css';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+    <main>
+      <header>
+      <a href="" className="logo">Blog</a>
+      <nav>
+        <a href="">Login</a>
+        <a href="">Register</a>
+      </nav>
       </header>
-    </div>
+      <div className="post">
+        <div className="image">
+          <img src="https://techcrunch.com/wp-content/uploads/2023/07/CMC_7326.jpg?w=730&crop=1" alt="" />
+        </div>  
+        <div className="texts">
+          <h2>Technologies full house title coming this year, right ?</h2>
+          <p className="info">
+            <a className="author">Rafa</a>
+            <time>2023-01-08 18:50</time>
+          </p>
+          <p className="summary">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Possimus officia debitis itaque impedit, </p>
+        </div>
+      </div>
+    </main>
   );
 }
 
