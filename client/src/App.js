@@ -1,29 +1,19 @@
 import './App.css';
+import Header from './components/Header/Header';
+import Layout from './components/Layout/Layout';
+import Login from './components/Login/Login';
+import HomePage from './components/Pages/HomePage';
+import Post from './components/Post/Post';
+import {Route, Routes} from "react-router-dom";
 
 function App() {
   return (
-    <main>
-      <header>
-      <a href="" className="logo">Blog</a>
-      <nav>
-        <a href="">Login</a>
-        <a href="">Register</a>
-      </nav>
-      </header>
-      <div className="post">
-        <div className="image">
-          <img src="https://techcrunch.com/wp-content/uploads/2023/07/CMC_7326.jpg?w=730&crop=1" alt="" />
-        </div>  
-        <div className="texts">
-          <h2>Technologies full house title coming this year, right ?</h2>
-          <p className="info">
-            <a className="author">Rafa</a>
-            <time>2023-01-08 18:50</time>
-          </p>
-          <p className="summary">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Possimus officia debitis itaque impedit, </p>
-        </div>
-      </div>
-    </main>
+    <Routes>
+      <Route path="/" element={<Layout />}>
+        <Route index element = { <HomePage />} />
+        <Route path={'/login'} element = { <Login /> } />
+      </Route>
+    </Routes>
   );
 }
 
