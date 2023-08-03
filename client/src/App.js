@@ -5,13 +5,15 @@ import Login from './components/Login/Login';
 import HomePage from './components/Pages/HomePage';
 import Post from './components/Post/Post';
 import {Route, Routes} from "react-router-dom";
+import Register from './components/Register/Register';
 
 function App() {
   return (
     <Routes>
       <Route path="/" element={<Layout />}>
         <Route index element = { <HomePage />} />
-        <Route path={'/login'} element = { <Login /> } />
+        <Route path="/login" element = { <Login /> } />
+        <Route path="/register" element = { <Register /> } />
       </Route>
     </Routes>
   );
