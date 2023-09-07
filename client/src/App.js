@@ -9,6 +9,7 @@ import Register from './components/Register/Register';
 import UserContextProvider from './UserContext';
 import CreatePost from './components/Pages/CreatePost';
 import PostPage from './components/Pages/PostPage';
+import EditPost from './components/Pages/EditPost';
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
           <Route path="/register" element = { <Register /> } />
           <Route path="/create" element = { <CreatePost /> } />
           <Route path="/posts/:id" element = {<PostPage />} />
+          <Route path="/edit/:id" element= {<EditPost />} />
         </Route>
       </Routes>
     </UserContextProvider>
