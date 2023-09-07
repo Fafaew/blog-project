@@ -17,6 +17,7 @@ const secret = 'asiueuhaisehaiseh9sea';
 app.use(cors({credentials: true, origin: 'http://localhost:3000'}));
 app.use(express.json());
 app.use(cookieParser());
+app.use('/uploads', express.static(__dirname + '/uploads'));
 
 mongoose.connect("mongodb+srv://rafaelgomest:rafaelgomest@cluster0.lkz9qwo.mongodb.net/");
 
@@ -82,12 +83,22 @@ app.get('/profile', (req, res) => {
 });
 
 app.get('/post', async(req,res) => {
-  res.json(await Post.find());
-})
+  res.json(await Post.find()
+  .populate('author', ['username'])
+  .sort({createdAt: -1})
+  .limit(20)
+  );
+});
 
 app.post('/logout', (req,res) => {
   res.cookie('token', '').json('ok');
-})
+});
+
+app.get('/post/:id', async(req, res) => {
+  const {id} = req.params;
+  const postDoc = await Post.findById(id).populate('author', ['username']);
+  res.json(postDoc);
+});
 
 app.listen(4000);
 

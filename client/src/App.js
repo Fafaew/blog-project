@@ -8,6 +8,7 @@ import {Route, Routes} from "react-router-dom";
 import Register from './components/Register/Register';
 import UserContextProvider from './UserContext';
 import CreatePost from './components/Pages/CreatePost';
+import PostPage from './components/Pages/PostPage';
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
           <Route path="/login" element = { <Login /> } />
           <Route path="/register" element = { <Register /> } />
           <Route path="/create" element = { <CreatePost /> } />
+          <Route path="/posts/:id" element = {<PostPage />} />
         </Route>
       </Routes>
     </UserContextProvider>
